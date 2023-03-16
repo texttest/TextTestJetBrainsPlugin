@@ -3,6 +3,7 @@ package org.texttest.texttestplugin;
 import com.intellij.execution.configurations.ConfigurationFactory;
 import com.intellij.execution.configurations.ConfigurationType;
 import com.intellij.icons.AllIcons;
+import icons.MyIcons;
 import org.jetbrains.annotations.Nls;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
@@ -26,7 +27,7 @@ public class ExecuteTextTestsRunConfigurationType implements ConfigurationType {
 
     @Override
     public Icon getIcon() {
-        return AllIcons.General.Information;
+        return MyIcons.TT_LOGO;
     }
 
     @Override
