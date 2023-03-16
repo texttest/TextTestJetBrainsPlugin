@@ -1,6 +1,5 @@
 package org.texttest.texttestplugin;
 
-import com.intellij.execution.configurations.RunConfiguration;
 import com.intellij.openapi.options.ConfigurationException;
 import com.intellij.openapi.options.SettingsEditor;
 import com.intellij.openapi.ui.LabeledComponent;
@@ -13,16 +12,19 @@ public class ExecuteTextTestsSettingsEditor extends SettingsEditor<ExecuteTextTe
 
     private JPanel myPanel;
     private LabeledComponent<TextFieldWithBrowseButton> textTestHomeChooser;
+    private LabeledComponent<JCheckBox> useTEXTTEST_HOME_env_CheckBox;
 
 
     @Override
     protected void resetEditorFrom(@NotNull ExecuteTextTestsRunConfiguration ettrc) {
         textTestHomeChooser.getComponent().setText(ettrc.getTextTestHome());
+        useTEXTTEST_HOME_env_CheckBox.getComponent().setSelected(ettrc.useTextTestHomeEnv());
     }
 
     @Override
     protected void applyEditorTo(@NotNull ExecuteTextTestsRunConfiguration ettrc) throws ConfigurationException {
         ettrc.setTextTestHome(textTestHomeChooser.getComponent().getText());
+        ettrc.setUseTextTestHomeEnv(useTEXTTEST_HOME_env_CheckBox.getComponent().isSelected());
     }
 
     @Override
@@ -33,5 +35,7 @@ public class ExecuteTextTestsSettingsEditor extends SettingsEditor<ExecuteTextTe
     private void createUIComponents() {
         textTestHomeChooser = new LabeledComponent<>();
         textTestHomeChooser.setComponent(new TextFieldWithBrowseButton());
+        useTEXTTEST_HOME_env_CheckBox = new LabeledComponent<>();
+        useTEXTTEST_HOME_env_CheckBox.setComponent(new JCheckBox());
     }
 }
