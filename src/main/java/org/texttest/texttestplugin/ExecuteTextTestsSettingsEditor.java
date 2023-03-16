@@ -14,11 +14,6 @@ public class ExecuteTextTestsSettingsEditor extends SettingsEditor<ExecuteTextTe
     private JPanel myPanel;
     private LabeledComponent<TextFieldWithBrowseButton> textTestHomeChooser;
 
-    public ExecuteTextTestsSettingsEditor() {
-        super();
-        createEditor();
-    }
-
 
     @Override
     protected void resetEditorFrom(@NotNull ExecuteTextTestsRunConfiguration ettrc) {
@@ -32,16 +27,11 @@ public class ExecuteTextTestsSettingsEditor extends SettingsEditor<ExecuteTextTe
 
     @Override
     protected @NotNull JComponent createEditor() {
-        createUIComponents();
-        myPanel = new JPanel();
-        myPanel.add(textTestHomeChooser);
         return myPanel;
     }
 
     private void createUIComponents() {
         textTestHomeChooser = new LabeledComponent<>();
-        textTestHomeChooser.setText("Path of TEXTTEST_HOME");
-
         textTestHomeChooser.setComponent(new TextFieldWithBrowseButton());
     }
 }
