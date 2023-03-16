@@ -8,7 +8,7 @@
     <name>TextTestPlugin</name>
 
     <!-- A displayed Vendor name or Organization ID displayed on the Plugins Page. -->
-    <vendor email="info@bacheconsulting.com" url="http://bacheconsulting.com">Bache Consulting AB</vendor>
+    <vendor email="texttest-users@lists.sourceforge.net" url="https://github.com/texttest">TextTest</vendor>
 
     <!-- Description of the plugin displayed on the Plugin Page and IDE Plugin Manager.
          Simple HTML elements (text formatting, paragraphs, and lists) can be added inside of <![CDATA[ ]]> tag.
