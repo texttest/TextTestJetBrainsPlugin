@@ -5,7 +5,7 @@ import com.intellij.openapi.components.StoredProperty;
 
 public class ExecuteTextTestsRunConfigurationOptions extends RunConfigurationOptions {
 
-    private final StoredProperty<String> texttestHome = string(".").provideDelegate(this, "TEXTTEST_HOME");
+    private final StoredProperty<String> texttestHome = string(null).provideDelegate(this, "TEXTTEST_HOME");
 
     public String getTextTestHome() {
         return texttestHome.getValue(this);

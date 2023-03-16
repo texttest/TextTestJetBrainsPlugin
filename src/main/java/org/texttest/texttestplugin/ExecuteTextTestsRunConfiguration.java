@@ -42,7 +42,8 @@ public class ExecuteTextTestsRunConfiguration extends RunConfigurationBase<Execu
             @NotNull
             @Override
             protected ProcessHandler startProcess() throws ExecutionException {
-                GeneralCommandLine commandLine = new GeneralCommandLine("texttest");
+                String textTestHome = getOptions().getTextTestHome();
+                GeneralCommandLine commandLine = new GeneralCommandLine("texttest", "-con", "-d", textTestHome);
                 OSProcessHandler processHandler = ProcessHandlerFactory.getInstance().createColoredProcessHandler(commandLine);
                 ProcessTerminatedListener.attach(processHandler);
                 return processHandler;
